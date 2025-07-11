@@ -246,7 +246,7 @@ const Index = () => {
         <section ref={generateRef} className="py-20 px-6">
           <div className="text-center mb-12">
             <div className="inline-block bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
-              Ready to generate!
+              CA: 
             </div>
           </div>
           
