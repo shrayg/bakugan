@@ -22,7 +22,7 @@ export const Header = ({ onNavigate }: HeaderProps) => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-6">
-          <button 
+          <button  
             onClick={() => handleNavClick('generate')}
             className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
           >

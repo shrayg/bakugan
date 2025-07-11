@@ -2,7 +2,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Twitter } from "lucide-react";
 
-export const HeroSection = () => {
+interface HeaderProps {
+  onNavigate?: (section: string) => void;
+}
+
+export const HeroSection = ({ onNavigate }: HeaderProps) => {
+const handleNavClick = (section: string) => {
+    if (onNavigate) {
+      onNavigate(section);
+    }
+  };
+  
   return (
     <section className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden grid-bg">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background"></div>
@@ -31,10 +41,15 @@ export const HeroSection = () => {
         </p>
         
         <div className="flex justify-center space-x-4 mt-8">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg" size="lg">
+          <nav>
+          <Button 
+            onClick={() => handleNavClick('generate')}
+          
+        
+          className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 text-lg" size="lg">
             Generate Now
             <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          </Button></nav>
           <Button 
             variant="outline" 
             className="bg-transparent border-border text-foreground hover:bg-muted px-8 py-3 text-lg"
